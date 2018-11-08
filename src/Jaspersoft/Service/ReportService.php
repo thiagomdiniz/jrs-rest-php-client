@@ -57,8 +57,9 @@ class ReportService
 	 */
 	public function getReportInputControls($uri)
     {
-		$url = $this->restUrl2 . '/reports' . $uri . '/inputControls/values';
-		$data = $this->service->prepAndSend($url, array(200), 'GET', null, true, 'application/json', 'application/json');
+		#$url = $this->restUrl2 . '/reports' . $uri . '/inputControls/values';
+		$url = $this->restUrl2 . '/reports' . $uri . '/inputControls/';
+		$data = $this->service->prepAndSend($url, array(200, 204), 'GET', null, true, 'application/json', 'application/json');
 		return InputControl::createFromJSON($data);
 	}
 
